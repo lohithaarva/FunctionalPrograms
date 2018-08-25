@@ -7,8 +7,8 @@ var read = readline.createInterface({
 
 function flipCoin()
 {
-    read.question("Enter the times you flip a coin :" ,function(userinput){
-        utility.flipCoin(userinput);
+    read.question("Enter the times you flip a coin :" ,function(userInput){
+        utility.flipCoin(userInput);
         read.close();
     })
 }

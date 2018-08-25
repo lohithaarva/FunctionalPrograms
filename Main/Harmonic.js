@@ -5,11 +5,12 @@ var read = readline.createInterface({
     output : process.stdout
 });
 
-function hello()
+function Harmonic()
 {
-    read.question("Enter your user name: ", function(userInput){
-        utility.hello(userInput);
+    var userinput;
+    read.question("Enter the value to know harmonic series : ", function(userinput){
+        utility.Harmonic(userinput);
         read.close();
     })
 }
-hello();
+Harmonic();

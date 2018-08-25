@@ -5,11 +5,14 @@ var read = readline.createInterface({
     output : process.stdout
 });
 
-function hello()
+function coupon()
 {
-    read.question("Enter your user name: ", function(userInput){
-        utility.hello(userInput);
+    
+    read.question("The minimum value is :", function(rangeMin){
+    read.question("The maximum value is :", function(rangeMax){    
+        utility.coupon(rangeMin, rangeMax);
         read.close();
     })
+})
 }
-hello();
+coupon();

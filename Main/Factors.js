@@ -5,11 +5,12 @@ var read = readline.createInterface({
     output : process.stdout
 });
 
-function hello()
+function Factors()
 {
-    read.question("Enter your user name: ", function(userInput){
-        utility.hello(userInput);
+    
+    read.question("The prime factors of :", function(userinput){
+        utility.Factors(userinput);
         read.close();
     })
 }
-hello();
+Factors();

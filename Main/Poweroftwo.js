@@ -5,12 +5,12 @@ var read = readline.createInterface({
     output : process.stdout
 });
 
-function Poweroftwo()
+function powerOfTwo()
 {
     var userinput;
     read.question("The power value of : ", function(userinput){
-        utility.Poweroftwo(userinput);
+        utility.powerOfTwo(userinput);
         read.close();
     })
 }
-Poweroftwo();
+powerOfTwo();

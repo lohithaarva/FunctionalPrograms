@@ -5,11 +5,11 @@ var read = readline.createInterface({
     output : process.stdout
 });
 
-function Leapyear()
+function leapYear()
 {
     read.question("Enter the year: ", function(userinput){
-        utility.Leapyear(userinput);
+        utility.leapYear(userinput);
         read.close();
     })
 }
-Leapyear();
+leapYear();
