@@ -7,9 +7,9 @@ var read = readline.createInterface({
 
 function Harmonic()
 {
-    var userinput;
-    read.question("Enter the value to know harmonic series : ", function(userinput){
-        utility.Harmonic(userinput);
+    var userInput;
+    read.question("Enter the value to know harmonic series : ", function(userInput){
+        utility.Harmonic(userInput);
         read.close();
     })
 }

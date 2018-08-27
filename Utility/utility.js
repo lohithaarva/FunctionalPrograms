@@ -21,30 +21,33 @@ module.exports = {
         for (var i = 0; i < userInput; i++) {  //Taking an variable i and checking how many times the coin is flipped 
             if(Math.random() > 0.5) //math random function which is used to calculate the random which is grater than 0.5
             {
-              headCount++; //if yes increment headCount 
-            }
+              headCount++; //iire
+            } 
             else
-            {
-              tailCount ++; //else if not increment tailCount
-            }
+                {
+                tailCount ++; //else if not increment tailCount
+                }
         }
           console.log("Times head was flipped:" + headCount + " Percentage of head is " +(headCount/userInput)*100 + "%"); 
           console.log("Times tail was flipped:" + tailCount + " Percentage of head is " +(tailCount/userInput)*100 + "%"); 
     
         },
-        leapYear : function(userinput)
+
+        //Leap year 
+      leapYear : function(userinput)
         {
-            var year = userinput;
-            if(year % 4 == 0 && year % 100 !=0 || year % 400 ==0)
+            var year = userinput; //declaring a variable year
+            if(year % 4 == 0 && year % 100 !=0 || year % 400 ==0) //logic to find leap year
             {
-                console.log("It's a leap year");
+                console.log("It's a leap year");//if the condition is true it's a leap year
             }
             else
             {
-                console.log("It's not a leap year");
+                console.log("It's not a leap year"); //else it's not a leap year
             } 
         },
 
+        //Power of Two
         powerOfTwo : function(userinput)
         {   
             var number = userinput,
@@ -52,25 +55,25 @@ module.exports = {
             power = 1;
  
             console.log("Powers of " + userinput + " that are less than 2^" +userinput);
-            while (i <= userinput)
+            while (i <= userinput) //checks wheather i is less than the userinput
             {
-                console.log("2^"+i+" = " + power);
-                power = power * 2;
-                i++;
+                console.log("2^"+i+" = " + power); // if true, calculate 2 power of i everytime.
+                power = power * 2; //save the value in power and multiply  by 2
+                i++; // after each loop increment i
             }
         },
+     
 
-        Harmonic : function(userinput)
+        Harmonic : function(userInput)
         {
-            var i;
             var sum=0;
-            for(i=1;i<=userinput;i++)
+            for(var i=1;i<=userInput;i++)
             {
-            sum=sum+1/i;
+                sum = sum +( 1/i );
             }
-           console.log("The harmonic series are : " +sum);
-        },
-
+            console.log("The value of the nth harmonic series " + sum);
+     },
+         
         Factors : function(userinput)
         {
             function isPrime(n){
@@ -99,8 +102,8 @@ module.exports = {
                 }
                 console.log(`${primeFac}`);
         },
-        
-        gambling: function(userInput, amount, goal)
+
+         gambling: function(userInput, amount, goal)
         {
         var goal,amount, win=0;loss=0;
         for (var i = 0; i < userInput; i++)
@@ -129,12 +132,94 @@ module.exports = {
           
         coupon : function(rangeMin ,rangeMax)
         {
-            var rangeMin, rangeMax ;
-            for (var i = 0; i < rangeMax; i++)
+            var n = [];       
+            
+            var count = 0;                          
+            var distinct = 0;                       
+      
+        
+            while (distinct < n) {
+                var value = (Math.random() * n);   
+                count++;                              
+                if (!isCollected[value]) {
+                    distinct++;
+                    isCollected[value] = true;
+               }
+            }
+        },
+        
+        distance : function(x , y)
+        {
+            var x , y , result = Math.sqrt(Math.pow(x,2) + Math.pow(y,2));
+            console.log("The Euclidean distance between " + x + " and " + y + " is :" + result );
+        },
+
+        stopWatch : function(initialTime,endTime)
+        {
+            var startTime=0, endTime=0 , ellapsedTime;
             {
-                console.log(Math.random(rangeMin , rangeMax))
-            }    
-
-    },
-
+                if(initialTime == 1)
+                { 
+                    start();
+                }
+                function start()
+                    {
+                    var d1 = new Date();
+                    startTime = d1.getMilliseconds();
+                    console.log("Time started at : " +startTime);
+                    }
+                
+                function stop()
+                    {
+                    stopTime = date.getSeconds();
+                    console.log("Time ends at : " +endTime);
+                    }
+                function ellapsedTime()
+                    {
+                    ellapsedTime = startTime - endTime;
+                    console.log("the ellapsed time is : " + ellapsedTime);
+                    } 
+             }
+            
+        
+    } 
+        /*
+        var Stopwatch = require("node-stopwatch").Stopwatch;
+        var stopwatch = Stopwatch.create();
+        var s = 1;
+        if(userInput == s)
+        {
+            stopwatch.start();
+              //start the stop watch
+        console.log("ticks: " + stopwatch.elapsedTicks);
+        console.log("milliseconds: " + stopwatch.elapsedMilliseconds);
+        console.log("seconds: " + stopwatch.elapsed.seconds);
+        console.log("minutes: " + stopwatch.elapsed.minutes);
+        console.log("hours: " + stopwatch.elapsed.hours);
+        
+        //stop the stopwatch
+        stopwatch.stop();
+        }
+        else
+        {
+            console.log("press the valid key");
+        }
+        */
 }
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+    
+
