@@ -8,9 +8,9 @@ var read = readline.createInterface({
 function gambling()
 {
     
-    read.question("What is the stake you would like to play for ?", function(userInput){
-    read.question("How many times you would like to play ?", function(amount){
-    read.question("What is your goal fair ?", function(goal){
+    read.question("What is the stake you would like to play for ? ", function(userInput){
+    read.question("How many times you would like to play ? ", function(amount){
+    read.question("What is your goal fair ? ", function(goal){
         utility.gambling(userInput, amount, goal);
         read.close();
     })

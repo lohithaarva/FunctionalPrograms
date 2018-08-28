@@ -8,11 +8,13 @@ var read = readline.createInterface({
 function coupon()
 {
     
-    read.question("The minimum value is :", function(rangeMin){
-    read.question("The maximum value is :", function(rangeMax){    
-        utility.coupon(rangeMin, rangeMax);
+    read.question("The minimum value is :", function(minValue){
+    read.question("The maximum value is :", function(maxVAlue){  
+    read.question("The number of coupons :", function(number){     
+        utility.coupon(minValue, maxVAlue,number);
         read.close();
     })
+})
 })
 }
 coupon();

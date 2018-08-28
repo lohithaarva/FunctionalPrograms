@@ -19,9 +19,9 @@ module.exports = {
         var headCount = 0, tailCount = 0, userInput; //variables declared 
         
         for (var i = 0; i < userInput; i++) {  //Taking an variable i and checking how many times the coin is flipped 
-            if(Math.random() > 0.5) //math random function which is used to calculate the random which is grater than 0.5
+            if(Math.random() > 0.5) //math random function which is used to calculate the random numbers greater than 0.5
             {
-              headCount++; //iire
+              headCount++; //
             } 
             else
                 {
@@ -63,7 +63,6 @@ module.exports = {
             }
         },
      
-
         Harmonic : function(userInput)
         {
             var sum=0;
@@ -126,27 +125,32 @@ module.exports = {
          
                     }
             }
-          console.log("Number of times he has won" +win + " Won percentage is " +(win/userInput)*100); 
-          console.log("Number of times he has lost:" +loss + "Loss percentage is "+(loss/userInput)*100); 
+            console.log("Number of losses are " + loss)
+            console.log("Number of won " + win)
+          console.log("Number of times he has won" +win + " Won percentage is " +(win/userInput)*100 + " %"); 
+          console.log("Number of times he has lost:" +loss + "Loss percentage is "+(loss/userInput)*100 + " %"); 
         },
           
-        coupon : function(rangeMin ,rangeMax)
+        coupon : function(minValue ,maxValue,number)
         {
-            var n = [];       
-            
-            var count = 0;                          
-            var distinct = 0;                       
-      
-        
-            while (distinct < n) {
-                var value = (Math.random() * n);   
-                count++;                              
-                if (!isCollected[value]) {
-                    distinct++;
-                    isCollected[value] = true;
-               }
+           var maxValue,minValue,number;
+           var arr = [];
+           for (var i = 0;i<= number;i++)
+           {
+               arr.push(Math.floor(Math.random(minValue,maxValue)* 1000000));
+           }
+           for(var j =0;j<=arr.length;j++)
+           {    
+               if(arr[j]==arr[i+1])
+            {
+                 arr.pop(arr[i]);
             }
-        },
+        }
+         for(var k=0; k<arr.length; k++)
+        {
+            console.log('Distinct random numbers are ' +arr[k]);
+        }
+    },
         
         distance : function(x , y)
         {
@@ -154,36 +158,23 @@ module.exports = {
             console.log("The Euclidean distance between " + x + " and " + y + " is :" + result );
         },
 
-        stopWatch : function(initialTime,endTime)
-        {
-            var startTime=0, endTime=0 , ellapsedTime;
-            {
-                if(initialTime == 1)
-                { 
-                    start();
-                }
-                function start()
-                    {
-                    var d1 = new Date();
-                    startTime = d1.getMilliseconds();
-                    console.log("Time started at : " +startTime);
-                    }
-                
-                function stop()
-                    {
-                    stopTime = date.getSeconds();
-                    console.log("Time ends at : " +endTime);
-                    }
-                function ellapsedTime()
-                    {
-                    ellapsedTime = startTime - endTime;
-                    console.log("the ellapsed time is : " + ellapsedTime);
-                    } 
-             }
-            
+        getTime : function() {
+
+            var date = new Date();
+
+           var n = date.getTime();
+           return n;
+
+        },
         
-    } 
-        /*
+
+        ellapsed : function(initialTime, finalTime)
+        {
+            var result = (finalTime - initialTime)/1000;
+            return result;
+        },
+    
+        /* Any other program for stop watch using inbuilt function
         var Stopwatch = require("node-stopwatch").Stopwatch;
         var stopwatch = Stopwatch.create();
         var s = 1;
@@ -205,7 +196,109 @@ module.exports = {
             console.log("press the valid key");
         }
         */
-}
+
+       quadratic : function(a , b , c)
+       {
+            var delta, root1, root2, realPart;
+            delta = b*b - 4*a*c
+            console.log('Delta value is :' +delta)
+               if(delta > 0)
+            {
+                root1  = -b + Math.sqrt(delta)/(2*a)
+                root2  = -b - Math.sqrt(delta)/(2*a)
+                console.log("The root1 of x is " +root1);
+                console.log("The root2 of x is " +root2);
+            }
+            if(delta ==0)
+            {
+                root1 = -b / (2*a)
+                root2 = -b/ (2*a)
+                console.log("The root1 of x is " +root1);
+                console.log("The root2 of x is " +root2);
+            }
+            if(delta < 0)
+            {
+                realPart = -b / (2*a);
+                imaginaryPart =Math.sqrt(-delta)/(2*a)
+                console.log("The realPart  of x is " +realPart);
+                console.log("The imaginaryPart of x is " +imaginaryPart);
+            }
+            
+       },
+
+       windChill : function(temp, speed)
+       {
+           if(temp < 50 && speed < 120 && speed > 3)
+           { 
+           var wind = (35.74 + 0.6215 * temp + (0.4275 * temp - 35.75) )*Math.pow(speed , 0.16)
+           console.log("The effective temperature temperature is : " + wind)
+           }
+           else 
+           {
+               console.log("Enter the correct range of temperarure and windspeed");
+           }
+       },
+
+       array : function(row)
+       {
+           var arr = new Array(row);
+           var prompt = require('prompt-sync')();
+           var column = prompt("Enter number of columns :");
+           for(var i =0;i<row;i++)
+           {
+               arr[i]=new Array(column);
+               for(var j = 0; j<column;j++)
+            {
+                arr [i][j] = prompt ("Enter the elements of the array :");
+            }            
+       }
+       console.log(arr);
+    },
+
+    triplets : function(row)
+    {
+        var prompt = require('prompt-sync')();
+        var arr = new Array(row);
+        var array1 = new Array();
+        for(var index = 0; index < row; index ++)
+        {
+             arr[index] = prompt("Enter the elements");
+        }
+             for(var i =0; i<(arr.length -2); i++)
+            {
+                for (var j= i+1; j<(arr.length-1); j++)
+                 {
+                    for (var k = j+1; k <(arr.length); k++)
+                    {
+                         var sum = Number(arr[i]) + Number (arr [j]) + Number (arr [k]);
+                            if(sum ==0)
+                            {
+                                console.log("The triplets are : " +arr[i]+","+arr[j]+","+arr[k]);
+                            }
+                        }
+                        }
+                                /*function removeDuplicates(arr)
+                                {
+                                    var unique = []
+                                    for(var i =0;i<arr.length;i++)
+                                    {
+                                        if(unique.indexOf(arr[i]) == -1)
+                                        {
+                                            unique.push (arr[i])
+                                        }
+                                    }
+                                    return unique;
+                                }
+                                */
+                    }
+                    
+                
+            
+        }
+    }
+
+                    
+
 
 
 
