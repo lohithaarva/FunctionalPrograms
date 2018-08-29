@@ -1,25 +1,58 @@
+/**
+ * @description Dependencies require to be installed before the execution of this file.
+ * @var {Class} prompt class instance of the prompt
+ */
 module.exports = {
-    //User Input and Replace String Template “Hello <<UserName>>, How are you?”
-    hello : function(userInput) // Take name as userInput
-    {
-        if(userInput.length>=3) //The entered name should be greater than or equal to 3 characters
+
+/**
+ *@description Take a User Input and Replace String Template “Hello <<UserName>>, How are you?”
+ */
+    /**
+     * @description Class Hello
+     *  
+     * @class Hello
+     * @parameter {userInput}
+     */
+        hello : function(userInput) 
+        /**
+        * @description  userInput variable stores the number entered by the user as a input.
+         */
+         {
+             /**
+             * @description Checks condition if the entered userInput is more than 3 characters in size
+              */
+        if(userInput.length>=3) 
         {
-            console.log("Hey " + userInput + "! How are you");// print if the name is more than 3 characters
+            console.log("Hey " + userInput + "! How are you");
         }
             else
                 {
-                console.log("Please enter a name which has more than 3 characters"); // else request the user to provide more than 3 characters 
+                console.log("Please enter a valid name"); 
                 }
                 
     },
 
-    // Flip Coin and print percentage of Heads and Tails
-     flipCoin : function(userInput) //number of times the coin filped is taken as userInput
+    /**
+        * @description  Flip Coin and print percentage of Heads and Tails
+         */
+        /**
+     * @description Class Coin
+     *  
+     * @class Coin
+     * @parameter {userInput}
+     */
+     flipCoin : function(userInput)
+     /**
+        * @description  userInput variable stores the number of times the coin is flipped
+         */
      {
         var headCount = 0, tailCount = 0, userInput; //variables declared 
-        
-        for (var i = 0; i < userInput; i++) {  //Taking an variable i and checking how many times the coin is flipped 
-            if(Math.random() > 0.5) //math random function which is used to calculate the random numbers greater than 0.5
+        /**
+        * @description Try all possible ways while tossing a coin
+        * if the declared varialble i is less than userInput, calcualte the mathrandom function 
+        */
+        for (var i = 0; i < userInput; i++) {  
+            if(Math.random() > 0.5) 
             {
               headCount++; //
             } 
@@ -27,14 +60,16 @@ module.exports = {
                 {
                 tailCount ++; //else if not increment tailCount
                 }
-        }
+        } //end of the loop
           console.log("Times head was flipped:" + headCount + " Percentage of head is " +(headCount/userInput)*100 + "%"); 
           console.log("Times tail was flipped:" + tailCount + " Percentage of head is " +(tailCount/userInput)*100 + "%"); 
     
         },
 
-        //Leap year 
-      leapYear : function(userinput)
+        /**
+        *@description Check if the year is leapyear or not
+        */
+        leapYear : function(userinput)
         {
             var year = userinput; //declaring a variable year
             if(year % 4 == 0 && year % 100 !=0 || year % 400 ==0) //logic to find leap year
@@ -47,7 +82,9 @@ module.exports = {
             } 
         },
 
-        //Power of Two
+        /**
+        * @description  userInput variable stores the number entered by the user as the input.
+         */
         powerOfTwo : function(userinput)
         {   
             var number = userinput,
@@ -62,7 +99,9 @@ module.exports = {
                 i++; // after each loop increment i
             }
         },
-     
+         /**
+        * @description  userInput variable stores the number entered by the user as the input.
+         */
         Harmonic : function(userInput)
         {
             var sum=0;
@@ -72,7 +111,9 @@ module.exports = {
             }
             console.log("The value of the nth harmonic series " + sum);
      },
-         
+         /**
+        * @description  userInput variable stores the number entered by the user as the input.
+         */
         Factors : function(userinput)
         {
             function isPrime(n){
@@ -101,36 +142,39 @@ module.exports = {
                 }
                 console.log(`${primeFac}`);
         },
-
+        /**
+        * @description  userInput variable stores the number entered by the user as the input.
+         */
          gambling: function(userInput, amount, goal)
         {
         var goal,amount, win=0;loss=0;
-        for (var i = 0; i < userInput; i++)
-            {
-            if(amount!=0 || amount<goal)
-                {   
-                if(Math.random()> 0.5)
-                    {
-                    console.log("won");
-                    win++;
-                    amount++;
-                    
-                    }
-                 else
-                        {
-                        console.log("loss");
-                        loss++;
-                        amount--;
-                        }
-         
-                    }
-            }
-            console.log("Number of losses are " + loss)
-            console.log("Number of won " + win)
-          console.log("Number of times he has won" +win + " Won percentage is " +(win/userInput)*100 + " %"); 
-          console.log("Number of times he has lost:" +loss + "Loss percentage is "+(loss/userInput)*100 + " %"); 
-        },
-          
+            
+                    while (amount!=0 && amount<= goal && userInput > 0)
+                        {   
+                        if(Math.random()> 0.5)
+                            {
+                            console.log("won");
+                            win++;
+                            amount++;
+                            
+                            }
+                        else
+                                {
+                                console.log("loss");
+                                loss++;
+                                amount--;
+                                }
+                
+                            }
+                console.log("Number of losses are " + loss)
+                console.log("Number of won " + win)
+                console.log("Number of times he has won" +win + " Won percentage is " +(win/userInput)*100 + " %"); 
+                console.log("Number of times he has lost:" +loss + "Loss percentage is "+(loss/userInput)*100 + " %"); 
+                
+    },
+         /**
+        * @description  userInput variable stores the number entered by the user as the input.
+         */ 
         coupon : function(minValue ,maxValue,number)
         {
            var maxValue,minValue,number;
@@ -151,7 +195,9 @@ module.exports = {
             console.log('Distinct random numbers are ' +arr[k]);
         }
     },
-        
+        /**
+        * @description  userInput variable stores the number entered by the user as the input.
+         */
         distance : function(x , y)
         {
             var x , y , result = Math.sqrt(Math.pow(x,2) + Math.pow(y,2));
@@ -167,6 +213,9 @@ module.exports = {
 
         },
         
+        /**
+        * @description  userInput variable stores the number entered by the user as the input.
+         */
 
         ellapsed : function(initialTime, finalTime)
         {
@@ -174,8 +223,8 @@ module.exports = {
             return result;
         },
     
-        /* Any other program for stop watch using inbuilt function
-        var Stopwatch = require("node-stopwatch").Stopwatch;
+        /* Any other program for stop watch usingelse { inbuilt function
+        var Stopwatch = require("node-stopwatch")                    console.log("cannot play").Stopwatch;
         var stopwatch = Stopwatch.create();
         var s = 1;
         if(userInput == s)
@@ -196,7 +245,10 @@ module.exports = {
             console.log("press the valid key");
         }
         */
-
+    
+        /**
+        * @description  userInput variable stores the number entered by the user as the input.
+         */
        quadratic : function(a , b , c)
        {
             var delta, root1, root2, realPart;
@@ -225,9 +277,15 @@ module.exports = {
             }
             
        },
-
+        /**
+        * @description  It takes two double command­line arguments and v and prints the wind chill..
+         */
        windChill : function(temp, speed)
        {
+           /**
+            * @description condition where temperature is less than 50 and 
+            * checks with the speed which is should be less than 120 and more than 3.
+            */
            if(temp < 50 && speed < 120 && speed > 3)
            { 
            var wind = (35.74 + 0.6215 * temp + (0.4275 * temp - 35.75) )*Math.pow(speed , 0.16)
@@ -238,7 +296,9 @@ module.exports = {
                console.log("Enter the correct range of temperarure and windspeed");
            }
        },
-
+       /**
+        * @description  userInput variable stores the number entered by the user as the input.
+         */
        array : function(row)
        {
            var arr = new Array(row);
@@ -254,7 +314,9 @@ module.exports = {
        }
        console.log(arr);
     },
-
+    /**
+        * @description  userInput variable stores the number entered by the user as the input.
+         */
     triplets : function(row)
     {
         var prompt = require('prompt-sync')();
@@ -262,7 +324,7 @@ module.exports = {
         var array1 = new Array();
         for(var index = 0; index < row; index ++)
         {
-             arr[index] = prompt("Enter the elements");
+             arr[index] = prompt("Enter the elements ");
         }
              for(var i =0; i<(arr.length -2); i++)
             {
@@ -273,29 +335,80 @@ module.exports = {
                          var sum = Number(arr[i]) + Number (arr [j]) + Number (arr [k]);
                             if(sum ==0)
                             {
-                                console.log("The triplets are : " +arr[i]+","+arr[j]+","+arr[k]);
+                                //console.log("The triplets are : " +arr[i]+","+arr[j]+","+arr[k]);
+                                array1.push(arr[i] + ' ' + arr[j] + ' '+arr[k])
                             }
-                        }
-                        }
-                                /*function removeDuplicates(arr)
+                    }
+                }
+            }
+                                function removeDuplicates(arr)
                                 {
-                                    var unique = []
+                                    var unique = [];
                                     for(var i =0;i<arr.length;i++)
                                     {
                                         if(unique.indexOf(arr[i]) == -1)
                                         {
-                                            unique.push (arr[i])
+                                            unique.push (arr[i]);
                                         }
                                     }
                                     return unique;
+                                    
                                 }
-                                */
-                    }
+                              // var  res = removeDuplicates(array1)
+                                
+                              //  console.log( res.split('') );
+                                console.log(removeDuplicates(array1))
+                            },
+     /**
+        * @description  userInput variable stores the number entered by the user as the input.
+         */
+     permute : function(str, firstIndex , lastIndex)
+     {
+         if(lastIndex === firstIndex)
+            {
+                 console.log(str.join(''))
                     
-                
-            
-        }
+            }
+             else
+             {
+                for(var i = firstIndex ; i <=lastIndex ; i++)
+                    {
+                       
+                       this.swap(str , firstIndex , i)
+                       // console.log( str)
+                       this.permute(str , firstIndex+1, lastIndex)
+                       // console.log( str)
+                       this.swap(str , i , firstIndex)
+                       // console.log( str)
+                       
+                    }    
+            }       
+            },
+     swap :function(str , i, j)
+        {
+             var temp;
+            temp = str[i];
+            str[i] = str[j];
+            str[j] = temp;
+            return str;           
+         },
+     /**
+        * @description  userInput variable stores the number entered by the user as the input.
+         */
+     tictactoe : function()
+     {
+        var game = new TicTacToe();
+
+        game.intitializeBoard();
+        game.determineFirstTurn();
+        
+        game.turn();
     }
+     
+
+
+    }
+
 
                     
 

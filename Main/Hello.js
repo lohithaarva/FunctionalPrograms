@@ -8,8 +8,9 @@ var read = readline.createInterface({
 function hello()
 {
     read.question("Enter your user name: ", function(userInput){
+        
         utility.hello(userInput);
         read.close();
-    })
+    })       
 }
 hello();

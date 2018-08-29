@@ -3,7 +3,8 @@ var utility = require('../Utility/utility.js');
 function triplets()
 {
   
-    var row = prompt("size")
+    var row = prompt("Enter the size  : ")
    utility.triplets(row);
+   
 }
 triplets();
